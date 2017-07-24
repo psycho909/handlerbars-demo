@@ -81,3 +81,16 @@ git merge amazing_new_feature
 ```
 git branch -d amazing_new_feature
 ```
+## 文件更動
+### 刪除文件實需要使用git rm 檔名 來通知倉庫刪除文件
+```
+git rm 檔名
+git commit -m "XXXX"
+git push origin master
+```
+### 當多個文件刪除時，並且確定刪除可以使用 git add -u
+```
+git add -u
+git commit -m "XXX"
+git push origin master
+```
