@@ -33,28 +33,11 @@
 	<div class="text" id="text"></div>
 	<div id="footer"></div>
 	
-	<template id="text-template" type="text/x-handlebars-template">
+	<script id="text-template" type="text/x-handlebars-template">
 		<div>
 			<h1 data-main="{{#debug 3 2}}{{/debug}}">Main</h1>
-			
 		</div>
-	</template>
-
-	<template id="footer-template" type="text/x-handlebars-template">
-		
-		<ul>
-			{{#each this}}
-				<li class="{{#lg age 18}}{{/lg}}">
-					title:{{@index}}--{{name}}
-					<ol class="{{#findprogramme programme}}{{/findprogramme}}">
-						{{#programme}}
-						<li>{{@index}}-{{language}}</li>
-						{{/programme}}
-					</ol>
-				</li>
-			{{/each}}
-		</ul>
-	</template>
+	</script>
 
 	<script src="js/app.js"></script>
 	<script>
@@ -82,22 +65,6 @@
 			}
 		})
 		$('#text').html(Handlebars.compile($('#text-template').html())());
-		$(function(){
-			$.ajax({
-				url:'js/json.js',
-				type:'GET',
-				dataType:'json'
-			}).done(function(data){
-				if(typeof(data)=='string'?JSON.parse(data):data){
-					$('#footer').html(Handlebars.compile($('#footer-template').html())(data));
-				}
-			}).fail(function(){
-				console.log('fail')
-			}).always(function(){
-				//console.log('complete')
-			})
-			
-		})
 	</script>
 </body>
 </html>
