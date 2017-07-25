@@ -39,6 +39,10 @@ git commit -m "訊息內容"
 ```git
 git remote add origin https://psycho909/handlerbars-demo.git
 ```
+> 可查詢連接遠端倉庫清單 - git remote -v
+```
+git remote -v
+```
 ## 上傳到服務器 - git push
 > git push命令會有兩個參數，遠端倉庫的名字，以及分支的名字：
 ```git
